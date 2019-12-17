@@ -7,7 +7,7 @@ export const inputs:number[] =
     .map(Number)
 
 export function execute(sequence:number[], cursor:number = 0):number[] {
- let [ command, a, b, target ] = sequence.slice(cursor, cursor += 4)
+  let [ command, a, b, target ] = sequence.slice(cursor, cursor += 4)
 
   if (command === 99) return sequence
 
