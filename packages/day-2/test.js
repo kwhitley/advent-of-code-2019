@@ -3,7 +3,7 @@ const {
   execute,
   restoreGravityAssistProgram,
 } = require('day-2')
-const { greenBright } = require('chalk')
+const { greenBright, yellowBright } = require('chalk')
 
 const testCases = [
   { 
@@ -44,6 +44,22 @@ describe('PART 1', () => {
     const sequence = execute(restoreGravityAssistProgram([...inputs]))
 
     it(greenBright(sequence[0]), () => {
+      expect(true).toBe(true)
+    })
+  })
+})
+
+describe('PART 2', () => {
+  describe('FINAL ANSWER', () => {
+    nounLoop: for (var noun=0; noun<100; noun++) {
+      verbLoop: for (var verb=0; verb<100; verb++) {
+        let s = execute(restoreGravityAssistProgram([...inputs], noun, verb))
+        
+        if (s[0] === 19690720) break nounLoop
+      }
+    }
+
+    it(`noun:${yellowBright(noun)} * 100 + verb:${yellowBright(verb)} = ${greenBright(100 * noun + verb)}`, () => {
       expect(true).toBe(true)
     })
   })
