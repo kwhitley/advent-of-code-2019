@@ -7,21 +7,8 @@ export const inputs:number[] =
     .split(',')
     .map(Number)
 
-// simple addition and multiplication as per Part 1 instructions
-export function executeSimple(sequence:number[], cursor:number = 0):number[] {
-  let [ command, a, b, target ] = sequence.slice(cursor, cursor += 4)
-
-  if (command === 99) return sequence
-
-  sequence[target] = command === 1 
-    ? sequence[a] + sequence[b] 
-    : sequence[a] * sequence[b]
-
-  return execute(sequence, cursor)
-}
-
 // current available instructions
-const instructions = {
+export const instructions = {
   1: {
     type: 'add',
     params: 3, 
