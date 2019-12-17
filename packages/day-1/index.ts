@@ -1,10 +1,9 @@
 import * as fs from 'fs-extra'
-import { green } from 'chalk'
 
 export const getFuel = (mass:number):number => 
   Math.max(Math.floor(mass / 3) - 2, 0)
 
-  export const getFuelForTheAges = (mass:number):number => {
+export const getFuelForTheAges = (mass:number):number => {
   const fuel = getFuel(mass)
 
   return fuel
